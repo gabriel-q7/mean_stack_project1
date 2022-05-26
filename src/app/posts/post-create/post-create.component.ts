@@ -3,12 +3,13 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-post-create',
   templateUrl: './post-create.component.html',
+  styleUrls: ['./post-create.component.css'],
 })
 export class PostCreateComponent {
+  enteredValue = '';
   newPost = 'no content';
 
   onAddPost() {
-    this.newPost = "The user's post";
-    alert('post added!');
+    this.newPost = this.enteredValue;
   }
 }
