@@ -1,4 +1,3 @@
-const { FILE } = require('dns')
 const express = require('express')
 const multer = require('multer')
 const Post = require("../models/post")
