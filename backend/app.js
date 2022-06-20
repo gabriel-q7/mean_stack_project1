@@ -2,13 +2,16 @@ const path = require("path")
 const express = require("express")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
+const dotenv = require("dotenv")
 
 const postsRoutes = require("./routes/posts")
 const userRoutes = require("./routes/user")
 
 const app = express()
 
-mongoose.connect("mongodb+srv://gabriel:CGrhp1khXZz5Tj3f@cluster0.c3uye.mongodb.net/node-angular?w=majority")
+dotenv.config()
+
+mongoose.connect(process.env.URL_DB)
     .then(() => {
         console.log("Connected to mongoDB!")
     })
