@@ -38,8 +38,8 @@ export class AuthService {
     return this.http
       .post('http://localhost:3000/api/user/signup', authData)
       .subscribe({
-        next: () => this.router.navigate(['/login']),
-        error: (e) => this.authStatusListener.next(false),
+        next: (v) => this.router.navigate(['/login']),
+        error: (err) => this.authStatusListener.next(false),
       });
   }
 
